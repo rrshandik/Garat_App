@@ -4,9 +4,12 @@ class AppColors {
   static const green = Color.fromARGB(255, 76, 166, 90);
   static const darkGrey = Color.fromARGB(255, 39, 39, 39);
   static const grey = Color.fromARGB(255, 167, 169, 172);
-
+  static const red = Color.fromARGB(255, 157, 45, 52);
+  static const pink = Color.fromARGB(255, 219, 161, 165);
   static const brown = Color.fromARGB(255, 186, 136, 64);
   static const white = Color.fromARGB(255, 255, 255, 255);
+  static const black = Color.fromARGB(0, 0, 0, 0);
+  
 }
 
 class TextStyles {

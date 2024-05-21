@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_tm/login_screen.dart';
-import 'package:flutter_tm/styles.dart';
+import 'package:flutter_tm/widget/styles.dart';
 import 'package:get/get.dart';
 
 class welcome_screen extends StatefulWidget {
@@ -18,7 +18,7 @@ class _WelcomeScreenState extends State<welcome_screen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 2), () {
-      Get.to(LoginScreen());
+      Get.to(LoginScreen(), transition: Transition.native, duration: Duration(seconds: 1));
     });
 
     Future.delayed(Duration.zero, () {
@@ -34,6 +34,14 @@ class _WelcomeScreenState extends State<welcome_screen> {
       backgroundColor: AppColors.white,
       body: Stack(
         children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/Back.png'), 
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
           Align(
             alignment: Alignment.topCenter,
             child: AnimatedOpacity(
@@ -44,27 +52,14 @@ class _WelcomeScreenState extends State<welcome_screen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(
-                      'Mobporite',
-                      style: TextStyles.title.copyWith(
-                        color: Colors.green,
-                        fontSize: 35.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Image.asset(
+                      'assets/images/Garat.png',
+                      height: 150.0, // Mengatur tinggi gambar
+                      width: 150.0, // Mengatur lebar gambar
+                      fit: BoxFit.contain,
                     ),
-                    SizedBox(height: 20.0),
                   ],
                 ),
-              ),
-            ),
-          ),
-          Positioned.fill(
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: Image.asset(
-                'assets/images/Landing.png',
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.cover,
               ),
             ),
           ),

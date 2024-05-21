@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tm/styles.dart';
+import 'package:flutter_tm/widget/styles.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -40,7 +40,7 @@ class CustomTextField extends StatelessWidget {
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
                       width: 0.5,
-                      color: AppColors.darkGrey,
+                      color: AppColors.red,
                     ),
                     borderRadius: BorderRadius.circular(10.0)
                   ),

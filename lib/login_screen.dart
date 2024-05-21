@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tm/styles.dart';
+import 'package:flutter_tm/home/homepage.dart';
+import 'package:flutter_tm/widget/styles.dart';
 import 'package:flutter_tm/widget/custom_textfield.dart';
+import 'package:get/get.dart';
 // import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -18,30 +20,34 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Login',
-          style: TextStyles.title.copyWith(fontSize: 26.0),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     'Login',
+      //     style: TextStyles.title.copyWith(fontSize: 26.0),
+      //   ),
+      //   centerTitle: true,
+      //   backgroundColor: Colors.white,
+      //   elevation: 0,
+      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AnimatedContainer(
-                duration: Duration(seconds: 1), // Durasi animasi
-                height: containerHeight, // Menggunakan tinggi yang berubah
-                child: Image.asset(
-                  'assets/images/Login.png',
-                  fit: BoxFit.contain,
+              Center(
+                child: AnimatedContainer(
+                  duration: Duration(seconds: 1), // Durasi animasi
+                  height: MediaQuery.of(context).size.height * 0.4, 
+                  width: MediaQuery.of(context).size.width * 0.5,   
+                  child: Image.asset(
+                    'assets/images/Garat.png',
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
-              const SizedBox(height: 16.0),
+
+              const SizedBox(height: 1.0),
               Text(
                 'Login Akun',
                 style: TextStyles.title.copyWith(fontSize: 20),
@@ -76,10 +82,11 @@ class _LoginScreenState extends State<LoginScreen> {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/homepage');
+                    // Navigator.pushNamed(context, '/homepage');
+                    Get.to(HomePage(), transition: Transition.rightToLeft);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.green,
+                    backgroundColor: AppColors.red,
                   ),
                   child: Padding(
                     padding: EdgeInsets.all(10.0),
@@ -104,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   'Sign Up',
                   style: TextStyles.body.copyWith(
                     fontSize: 12.0,
-                    color: AppColors.green,
+                    color: AppColors.red,
                   ),
                   textAlign: TextAlign.center,
                 ),

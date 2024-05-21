@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tm/homepage.dart';
+import 'package:flutter_tm/home/homepage.dart';
+import 'package:flutter_tm/kecelakaan/kecelakaan.dart';
 import 'package:flutter_tm/welcome_screen.dart';
 import 'package:get/get.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       home: welcome_screen(),
       getPages: [
         GetPage(name: '/homepage', page: () => HomePage()),
+        GetPage(name: '/kecelakaan', page: () => KecelakaanScreen())
       ],
     );
   }
